@@ -54,15 +54,15 @@ const NavigationBar = () => {
 
     return (
         <div className="w-full relative">
-            <div className="w-full items-center flex relative justify-between py-8">
+            <div className="w-full md:min-w-full items-center flex relative justify-between py-8">
                 <Link href="/">
 
-                    <div className="flex items-center gap-2">
-                        <Image className="-mt-2" alt="java" height={10} width={20} src="/java.png"/><Logo/>
+                    <div className="w-full flex items-center gap-2">
+                        <Image className="-mt-2" alt="java" height={20} width={22} src="/java.png"/><Logo/>
                     </div>
                 </Link>
 
-                <div className="hidden md:flex space-x-8 text-body text-white">
+                <div className="hidden md:flex  space-x-8 text-body text-white">
                     {NavigationItems.map((item, index) => (
                         <NavigationItem name={item} key={index} onClick={closeSmNavBar}/>
                     ))}
