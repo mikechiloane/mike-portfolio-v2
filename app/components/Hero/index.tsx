@@ -35,7 +35,7 @@ const Hero = () => {
                 <div className=" justify-center md:justify-end flex">
                     <div className="relative h-[300px] w-[300px]  md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-4 ">
                         <Image
-                            src="/me.jpg" // Random Image
+                            src="/me.jpg"
                             alt="Random Profile"
                             layout="fill"
                             className="w-full h-full object-cover"

@@ -1,3 +1,4 @@
+'use client';
 import BricolageFontWrapper from "@/app/components/FontWrapper";
 import {stackImages} from "@/app/data/stack";
 import TechnologyCard from "@/app/components/TechnologyCard";

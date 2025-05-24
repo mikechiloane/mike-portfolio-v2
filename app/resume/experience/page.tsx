@@ -1,3 +1,4 @@
+'use client';
 import ExperienceData from "@/app/data/experience";
 import ExperienceCard from "@/app/components/ExperienceCard";
 import BricolageFontWrapper from "@/app/components/FontWrapper";

@@ -10,7 +10,6 @@ export default function ResumeLayout({
 
         <div className="flex gap-8 w-full flex-col md:flex-row">
             <ResumeNavigator/>
-
             {children}
         </div>
 

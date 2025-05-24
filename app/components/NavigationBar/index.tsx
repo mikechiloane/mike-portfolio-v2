@@ -6,6 +6,7 @@ import Image from "next/image";
 import {IoMenu} from "react-icons/io5";
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import {setNavLinkActiveByClass} from "@/app/dom/nav";
 
 const NavigationBar = () => {
     const [smNavOpen, setSmNavOpen] = useState<boolean>(false);
@@ -18,13 +19,12 @@ const NavigationBar = () => {
         setSmNavOpen(false);
     }
 
-    // Effect to reset state when screen size changes to sm
     useEffect(() => {
         const mediaQuery = window.matchMedia('(max-width: 768px)'); // Adjust the breakpoint as needed
 
         const handleResize = (e: MediaQueryListEvent) => {
             if (e.matches) {
-                setSmNavOpen(false); // Reset state when screen size is sm
+                setSmNavOpen(false);
             }
         }
 
@@ -33,6 +33,23 @@ const NavigationBar = () => {
         return () => {
             mediaQuery.removeEventListener('change', handleResize);
         }
+    }, []);
+
+
+    useEffect(() => {
+        const currentPath = window.location.pathname;
+        console.log("Current Path:", currentPath);
+        if( currentPath === "/") {
+            setNavLinkActiveByClass("home");
+        }
+        else {
+            const firstSegment = window.location.pathname.split('/')[1];
+            if (NavigationItems.includes(firstSegment)){
+                setNavLinkActiveByClass(firstSegment);
+            }
+        }
+
+        // setNavLinkActiveByClass();
     }, []);
 
     return (

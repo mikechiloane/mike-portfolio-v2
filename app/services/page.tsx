@@ -1,3 +1,4 @@
+'use client';
 import ServicesData from "@/app/data/servicesData";
 import ServiceCard from "@/app/components/ServiceCard";
 import BricolageFontWrapper from "@/app/components/FontWrapper";

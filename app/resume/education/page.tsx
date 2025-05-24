@@ -1,3 +1,4 @@
+'use client';
 import BricolageFontWrapper from "@/app/components/FontWrapper";
 import {EducationData} from "@/app/data/education";
 import EducationCard from "@/app/components/EducationCard";
