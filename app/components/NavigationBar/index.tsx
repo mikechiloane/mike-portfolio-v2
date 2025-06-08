@@ -76,7 +76,7 @@ const NavigationBar = () => {
                 </div>
             </div>
             {smNavOpen && (
-                <div className="w-full h-screen absolute bg-background md:hidden">
+                <div className="w-full z-50 h-fit absolute bg-background md:hidden">
                     <div className="flex text-lg flex-col items-end gap-2">
                         {NavigationItems.map((item, index) => (
                             <NavigationItem name={item} key={index} onClick={closeSmNavBar}/>
