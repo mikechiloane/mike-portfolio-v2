@@ -10,7 +10,7 @@ const Hero = () => {
 
 
     return (
-            <div className="flex w-full flex-col md:flex-row gap-8  items-between mt-16 text-center md:text-start">
+            <div className="flex w-full flex-col md:flex-row gap-8  items-between mt-16 text-center md:text-start flex-col-reverse">
                 <div className="w-full">
                     <p className="text-lg font-semibold">Java Software Developer</p>
                     <div className={`${font.className} -mx-1 text-7xl font-semibold`}>
@@ -18,15 +18,14 @@ const Hero = () => {
                         <p className="text-java-red mt-1">Mike Chiloane</p>
                     </div>
                     <div className="text-small mt-4 text-gray-500 max-w-[500px] ">
-                        <p className="text-lg font-medium">I am a Java Software Developer with experience in building
-                            web applications and RESTful APIs using Java, Spring Boot, and MySQL. I am also experienced
-                            in building front-end applications using React, Next.js, and Tailwind CSS.</p>
+                        <p className="text-lg font-medium">Software Engineer with 6+ years of experience in building scalable, secure, and data-driven applications. Experienced in collaborating with cross-functional teams including devOps/SRE experts, data scientists and product managers. </p>
                     </div>
 
-                    <div className="mt-6">
-                        <div>
-                            <button className="text-xs font-bold border-2 text-java-red py-2 px-4 border-java-red border rounded-full">DOWNLOAD CV</button>
-                        </div>
+                    <div className="mt-6 flex  gap-4 items-center justify-center md:justify-start">
+                        <a download href="/cv/Mike_Chiloane_ID.pdf" className="relateive flex items-center bg-java-blue w-fit px-3 rounded">
+                            <Image width={20} height={200} src="/icons/download.svg" alt="download"/>
+                            <button className="text-md font-bold  text-white py-2  ">Download CV</button>
+                        </a>
                     </div>
 
                 </div>
@@ -35,7 +34,7 @@ const Hero = () => {
                 <div className=" justify-center md:justify-end flex">
                     <div className="relative h-[300px] w-[300px]  md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-4 ">
                         <Image
-                            src="/me.jpg"
+                            src="/me.JPG"
                             alt="Random Profile"
                             layout="fill"
                             className="w-full h-full object-cover"
