@@ -1,3 +1,5 @@
+"use client";
+
 import BricolageFontWrapper from "@/app/components/FontWrapper";
 
 interface EducationCardProps {

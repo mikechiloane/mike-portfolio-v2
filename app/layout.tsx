@@ -1,3 +1,4 @@
+
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
@@ -27,9 +28,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en suppressHyrationWarning">
+        <html lang="en ">
         <body
-            className={`${geistSans.className} ${geistMono.variable} antialiased  flex relative overflow-hidden overflow-y-scroll`}
+            className={`${geistSans.className} ${geistMono.variable} antialiased suppressHyrationWarning  flex relative overflow-hidden overflow-y-scroll`}
         >
 
         <DefaultBodyPadding>

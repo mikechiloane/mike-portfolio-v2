@@ -17,11 +17,9 @@ const setNavLinkActiveByClass = (className: string) => {
 function removeAllActiveLinks() {
 
     const navItems = NavigationItems.map(string => string.toLowerCase());
-    console.log(navItems)
     const underlines = navItems.map((item) => item.concat('-line'))
     const navlinks = navItems.map(item => item.concat('-link'));
 
-    console.log(underlines)
     underlines.forEach((line) => {
         const element = document.querySelector(`.${line}`);
         if (element) {

@@ -1,3 +1,5 @@
+"use client";
+
 import {ReactNode} from "react";
 import BricolageFontWrapper from "@/app/components/FontWrapper";
 

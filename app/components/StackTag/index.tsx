@@ -1,3 +1,5 @@
+"use client";
+
 import {IBM_Plex_Mono} from 'next/font/google';
 
 

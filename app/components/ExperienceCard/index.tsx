@@ -1,3 +1,4 @@
+"use client";
 import {FC} from "react";
 import FontWrapper from "@/app/components/FontWrapper";
 
