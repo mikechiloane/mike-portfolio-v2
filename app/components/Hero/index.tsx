@@ -48,7 +48,7 @@ function MySummary({ }) {
             </div>
 
             <div className="mt-6 flex h-20   gap-2 items-center justify-center md:justify-start">
-                <a action-name="Download CV" download href="/cv/Mike_Chiloane_ID.pdf" className="relateive flex items-center bg-java-blue w-fit px-3 rounded cursor-pointer hover:scale-105 transition-all duration-300">
+                <a action-name="Download CV" download href="/cv/Mike_CV.pdf" className="relateive flex items-center bg-java-blue w-fit px-3 rounded cursor-pointer hover:scale-105 transition-all duration-300">
                     <Image width={20} height={200} src="/icons/download.svg" alt="download" />
                     <button className="text-md font-bold  text-white py-2  ">Download CV</button>
                 </a>
