@@ -40,9 +40,11 @@ function MySummary({ }) {
     return (
         <ViewTransition>
         <div className="w-full">
+
             <div className={`${font.className} -mx-1 text-7xl font-semibold`}>
                 <p className="text-java-red mt-1">Mike Chiloane</p>
             </div>
+
             <div className="text-small mt-4 text-gray-500 max-w-[500px] ">
                 <p className="text-lg font-medium">Software Engineer with 6+ years of experience in building scalable, secure, and data-driven applications. Experienced in collaborating with cross-functional teams including devOps/SRE experts, data scientists and product managers. </p>
             </div>
@@ -54,10 +56,10 @@ function MySummary({ }) {
                 </a>
                 <a action-name="Visit Linkedin" href="https://www.linkedin.com/in/mikechiloane/" target="_blank"><Image src="/icons/linkedin.svg" width={40} height={30} alt="LinkedIn" className="cursor-pointer hover:scale-110 transition-all duration-300" /></a>
                 <a action-name="Visit Github" href="https://github.com/mikechiloane" target="_blank"><Image src="/icons/github.svg" width={40} height={30} alt="LinkedIn" className="cursor-pointer hover:scale-110 transition-all duration-300" /></a>
-
             </div>
 
         </div>
+
         </ViewTransition>
     );
 }
