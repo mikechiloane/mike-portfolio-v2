@@ -49,6 +49,14 @@ export default {
                 "java-blue": "#0C6FB6",
                 "java-grey": "#5C5C5C",
                 "java-yellow": "#ED8B00",
+                
+                // Dynamic theme colors
+                "text-primary": "var(--text-primary)",
+                "text-secondary": "var(--text-secondary)",
+                "surface-primary": "var(--surface-primary)",
+                "surface-secondary": "var(--surface-secondary)",
+                "card-bg": "var(--card-bg)",
+                "border-color": "var(--border-color)",
             },
             fontSize: {
                 "h1": "2.5rem", // 40px

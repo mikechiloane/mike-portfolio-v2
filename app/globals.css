@@ -4,6 +4,7 @@
 
 :root {
   --background: #F4F4F4;
+  --foreground: #0a0a0a;
   --java-red: #E11E22;
   --java-blue: #0C6FB6;
   --java-grey: #5C5C5C;
@@ -15,13 +16,25 @@
   --font-h3: 1.75rem; /* 28px */
   --font-body: 1rem; /* 16px */
   --font-small: 0.875rem; /* 14px */
+  
+  /* Light mode colors */
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --surface-primary: #f9fafb;
+  --surface-secondary: #f3f4f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --surface-primary: #111827;
+  --surface-secondary: #1f2937;
 }
 
 body {
