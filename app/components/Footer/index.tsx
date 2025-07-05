@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <p>📧 mike@example.com</p>
+              <p>📧 mike@mikechiloane.co.za</p>
               <p>📍 Johannesburg, South Africa</p>
               <p>🚀 Available for freelance projects</p>
             </motion.div>

@@ -123,7 +123,7 @@ const AchievementsSection: React.FC = () => {
             Key Achievements
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -137,10 +137,10 @@ const AchievementsSection: React.FC = () => {
                 <div className="w-16 h-16 bg-java-yellow rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">
                   {achievement.year}
                 </div>
-                <h4 className="text-xl font-bold text-text-primary mb-3">
+                <h4 className="text-xl font-bold text-text-primary mb-3 dark:text-text-primary">
                   {achievement.title}
                 </h4>
-                <p className="text-text-secondary">
+                <p className="text-text-secondary dark:text-text-secondary">
                   {achievement.description}
                 </p>
               </motion.div>
