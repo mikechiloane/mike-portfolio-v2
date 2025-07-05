@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { stackWithNames } from '@/app/data/stack';
 
 interface SkillCardProps {
   name: string;
@@ -54,20 +55,35 @@ const SkillCard: React.FC<SkillCardProps> = ({ name, icon, category, proficiency
   );
 };
 
-const skillsData = [
-  { name: "Java", icon: "/stack/0.png", category: "Backend", proficiency: 95 },
-  { name: "Spring Boot", icon: "/stack/1.png", category: "Framework", proficiency: 90 },
-  { name: "React", icon: "/stack/2.png", category: "Frontend", proficiency: 88 },
-  { name: "TypeScript", icon: "/stack/3.png", category: "Language", proficiency: 85 },
-  { name: "Node.js", icon: "/stack/4.png", category: "Backend", proficiency: 82 },
-  { name: "MongoDB", icon: "/stack/5.png", category: "Database", proficiency: 85 },
-  { name: "PostgreSQL", icon: "/stack/6.png", category: "Database", proficiency: 87 },
-  { name: "Docker", icon: "/stack/7.png", category: "DevOps", proficiency: 80 },
-  { name: "AWS", icon: "/stack/8.png", category: "Cloud", proficiency: 78 },
-  { name: "Kubernetes", icon: "/stack/9.png", category: "DevOps", proficiency: 75 },
-  { name: "Python", icon: "/stack/10.png", category: "Language", proficiency: 80 },
-  { name: "Next.js", icon: "/stack/11.png", category: "Framework", proficiency: 85 },
-];
+// Get skills data from our named stack with proper categories and proficiency levels
+const generateSkillsData = () => {
+  const skillsMapping = [
+    { name: "Java", category: "Backend", proficiency: 95 },
+    { name: "Spring", category: "Framework", proficiency: 90 },
+    { name: "React", category: "Frontend", proficiency: 88 },
+    { name: "TypeScript", category: "Language", proficiency: 85 },
+    { name: "Node.js", category: "Backend", proficiency: 82 },
+    { name: "MongoDB", category: "Database", proficiency: 85 },
+    { name: "PostgreSQL", category: "Database", proficiency: 87 },
+    { name: "Docker", category: "DevOps", proficiency: 80 },
+    { name: "AWS", category: "Cloud", proficiency: 78 },
+    { name: "Kubernetes", category: "DevOps", proficiency: 75 },
+    { name: "Python", category: "Language", proficiency: 80 },
+    { name: "Next.js", category: "Framework", proficiency: 85 },
+  ];
+
+  return skillsMapping.map(skill => {
+    const stackTech = stackWithNames.find(tech => tech.name === skill.name);
+    return {
+      name: skill.name,
+      icon: stackTech?.image || `/stack/0.png`, // fallback to Java icon
+      category: skill.category,
+      proficiency: skill.proficiency
+    };
+  });
+};
+
+const skillsData = generateSkillsData();
 
 const SkillsSection: React.FC = () => {
   const containerVariants = {

@@ -123,7 +123,7 @@ export default function TechnologiesPage() {
                     </div>
                     
                     <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3">
-                        {stackWithNames.map((tech, index) => (
+                        {stackWithNames.slice(0, 50).map((tech, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.5 }}
@@ -139,9 +139,14 @@ export default function TechnologiesPage() {
 
                     <div className="mt-8 text-center">
                         <p className="text-text-secondary">
-                            <span className="font-semibold text-java-blue">{stackWithNames.length}</span> technologies mastered with 
+                            <span className="font-semibold text-java-blue">{Math.min(stackWithNames.length, 50)}</span> technologies displayed with 
                             <span className="font-semibold text-java-red"> Java ecosystem expertise</span> at the core
                         </p>
+                        {stackWithNames.length > 50 && (
+                            <p className="text-xs text-text-secondary mt-2">
+                                Showing top 50 technologies (limited to 5 rows maximum)
+                            </p>
+                        )}
                     </div>
                 </motion.div>
             </div>
