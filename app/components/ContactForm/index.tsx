@@ -43,14 +43,24 @@ const ContactForm: React.FC = () => {
     {
       icon: <FiMail />,
       label: 'Email',
+<<<<<<< HEAD
       value: 'mike@example.com',
       href: 'mailto:mike@example.com'
+=======
+      value: 'mike@mikechiloane.co.za',
+      href: 'mailto:mike@mikechiloane.co.za'
+>>>>>>> c0dfa25 (correct number)
     },
     {
       icon: <FiPhone />,
       label: 'Phone',
+<<<<<<< HEAD
       value: '+27 123 456 789',
       href: 'tel:+27123456789'
+=======
+      value: '+27 727 388 632',
+      href: 'tel:+27727388632'
+>>>>>>> c0dfa25 (correct number)
     },
     {
       icon: <FiMapPin />,
