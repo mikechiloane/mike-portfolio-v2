@@ -1,9 +1,7 @@
 'use client'
-import { unstable_ViewTransition as ViewTransition } from 'react';
-import { setNavLinkActiveByClass } from "@/app/dom/nav";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useNavigation } from "@/app/context/navigation";
 
 interface NavigationItemProps {
     name: string;
@@ -11,39 +9,41 @@ interface NavigationItemProps {
 }
 
 const NavigationItem: React.FC<NavigationItemProps> = ({ name, onClick }) => {
+    const { activeNav, setActiveNav } = useNavigation();
+    const isActive = activeNav === name;
 
     const generateNavLink = (name: string) => {
         if (name === "home") {
             return "/";
         }
         if (name === "resume") {
-            return "/resume/experience";
+            return "/resume";
         }
         return `/${name}`;
     }
 
-
     return (
-        <ViewTransition>
-            <Link action-name={`Clicked on ${name}`} href={generateNavLink(name)}>
+        <Link 
+            href={generateNavLink(name)} 
+            prefetch={true}
+            onClick={() => {
+                setActiveNav(name);
+                onClick();
+            }}
+        >
+            <div className={`font-medium cursor-pointer group transition-colors duration-200 ${
+                isActive ? 'text-java-red font-bold' : 'text-java-blue'
+            }`}>
+                <p className="capitalize">{name}</p>
                 <div
-                    onClick={() => {
-                        setNavLinkActiveByClass(name);
-                        onClick();
-                    }}
-                    className="text-java-blue font-medium cursor-pointer"
-                >
-                    <p className={`${name}-link capitalize`}>{name}</p>
-                    <motion.div
-                        className={`h-[2px] w-full `}
-                        initial={{ scaleX: 0 }}
-                        whileHover={{ scaleX: 1 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        style={{ originX: 0, background: "#0070f3" }}
-                    />
-                </div>
-            </Link>
-        </ViewTransition>
+                    className={`h-[2px] w-full transition-all duration-200 ease-out origin-left ${
+                        isActive 
+                            ? 'bg-java-red scale-x-100' 
+                            : 'bg-java-blue scale-x-0 group-hover:scale-x-100'
+                    }`}
+                />
+            </div>
+        </Link>
     )
 }
 

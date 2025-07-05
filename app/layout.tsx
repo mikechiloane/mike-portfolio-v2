@@ -4,6 +4,9 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/app/components/NavigationBar";
 import DefaultBodyPadding from "@/app/components/DefaultBodyPadding";
+import Footer from "@/app/components/Footer";
+import { ThemeProvider } from "@/app/context/theme";
+import { NavigationProvider } from "@/app/context/navigation";
 import React from "react";
 
 const geistSans = Geist({
@@ -28,15 +31,21 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en ">
+        <html lang="en">
         <body
-            className={`${geistSans.className} ${geistMono.variable} antialiased suppressHyrationWarning  flex relative overflow-hidden overflow-y-scroll`}
+            className={`${geistSans.className} ${geistMono.variable} antialiased suppressHyrationWarning flex flex-col min-h-screen`}
         >
-
-        <DefaultBodyPadding>
-            <NavigationBar/>
-            {children}
-        </DefaultBodyPadding>
+        <ThemeProvider>
+            <NavigationProvider>
+                <DefaultBodyPadding>
+                    <NavigationBar/>
+                    <main className="flex-1">
+                        {children}
+                    </main>
+                </DefaultBodyPadding>
+                <Footer />
+            </NavigationProvider>
+        </ThemeProvider>
         </body>
         </html>
     );
