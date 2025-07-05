@@ -1,37 +1,50 @@
 'use client';
 import BricolageFontWrapper from "@/app/components/FontWrapper";
-import {stackImages} from "@/app/data/stack";
+import {
+    stackWithNames,
+    coreJavaStack,
+    databaseStack,
+    cloudDevopsStack,
+    frontendStack,
+    additionalStack
+} from "@/app/data/stack";
 import TechnologyCard from "@/app/components/TechnologyCard";
 import PageContainer from "@/app/components/PageContainer";
 import { motion } from "framer-motion";
-import { FiCode, FiDatabase, FiCloud, FiTool } from "react-icons/fi";
+import { FiCode, FiDatabase, FiCloud, FiTool, FiSettings } from "react-icons/fi";
 
 export default function TechnologiesPage() {
-    // Group technologies by category for better organization
+    // Organized technology categories using the predefined stacks
     const techCategories = [
         {
-            title: "Frontend Development",
+            title: "Core Java & JVM",
             icon: FiCode,
-            technologies: stackImages.slice(0, 7), // Adjust based on your stack
-            description: "Modern frontend frameworks and libraries"
+            technologies: coreJavaStack,
+            description: "Core Java ecosystem and development tools"
         },
         {
-            title: "Backend Development", 
+            title: "Databases & Search", 
             icon: FiDatabase,
-            technologies: stackImages.slice(7, 14),
-            description: "Server-side technologies and frameworks"
+            technologies: databaseStack,
+            description: "Data storage and search technologies"
         },
         {
             title: "Cloud & DevOps",
             icon: FiCloud,
-            technologies: stackImages.slice(14, 21),
+            technologies: cloudDevopsStack,
             description: "Cloud platforms and deployment tools"
         },
         {
-            title: "Tools & Others",
+            title: "Frontend & Full-Stack",
             icon: FiTool,
-            technologies: stackImages.slice(21),
-            description: "Development tools and additional technologies"
+            technologies: frontendStack,
+            description: "Frontend frameworks and modern web technologies"
+        },
+        {
+            title: "Additional Technologies",
+            icon: FiSettings,
+            technologies: additionalStack,
+            description: "Additional backend and development tools"
         }
     ];
 
@@ -50,9 +63,9 @@ export default function TechnologiesPage() {
                         </h1>
                     </BricolageFontWrapper>
                     <p className="text-text-secondary leading-relaxed max-w-4xl">
-                        I have worked with a diverse range of technologies across the full software development stack, 
-                        from modern frontend frameworks to robust backend systems, cloud platforms, and DevOps tools. 
-                        Here&apos;s an overview of my technical expertise built over <span className="font-semibold text-java-blue">6+ years</span> of professional experience.
+                        I have extensive experience with <span className="font-semibold text-java-blue">Java ecosystem</span> technologies, 
+                        complemented by modern frontend frameworks, cloud platforms, and DevOps tools. 
+                        Here&apos;s my technical expertise organized by importance for Java development over <span className="font-semibold text-java-blue">6+ years</span> of professional experience.
                     </p>
                 </motion.div>
 
@@ -78,8 +91,8 @@ export default function TechnologiesPage() {
                             </div>
 
                             {/* Technology Grid */}
-                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                                {category.technologies.map((item, index) => (
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                                {category.technologies.map((tech, index) => (
                                     <motion.div
                                         key={index}
                                         initial={{ opacity: 0, scale: 0.8 }}
@@ -87,7 +100,7 @@ export default function TechnologiesPage() {
                                         transition={{ delay: (categoryIndex * 0.1) + (index * 0.05), duration: 0.4 }}
                                         whileHover={{ scale: 1.05, y: -5 }}
                                     >
-                                        <TechnologyCard image={item} />
+                                        <TechnologyCard technology={tech} />
                                     </motion.div>
                                 ))}
                             </div>
@@ -109,8 +122,8 @@ export default function TechnologiesPage() {
                         <h2 className="text-2xl font-bold text-text-primary">Complete Technology Stack</h2>
                     </div>
                     
-                    <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-3">
-                        {stackImages.map((item, index) => (
+                    <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3">
+                        {stackWithNames.map((tech, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.5 }}
@@ -119,15 +132,15 @@ export default function TechnologiesPage() {
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                 className="transform transition-all duration-200"
                             >
-                                <TechnologyCard image={item} />
+                                <TechnologyCard technology={tech} />
                             </motion.div>
                         ))}
                     </div>
 
                     <div className="mt-8 text-center">
                         <p className="text-text-secondary">
-                            <span className="font-semibold text-java-blue">{stackImages.length}+</span> technologies mastered across 
-                            <span className="font-semibold text-java-red"> 6+ years</span> of professional development
+                            <span className="font-semibold text-java-blue">{stackWithNames.length}</span> technologies mastered with 
+                            <span className="font-semibold text-java-red"> Java ecosystem expertise</span> at the core
                         </p>
                     </div>
                 </motion.div>
