@@ -11,7 +11,7 @@ export type ContactData = {
 const contactData = [
     {
         title:'phone',
-        value:'0727388632',
+        value:'+27 727 388 632',
         child: FaPhone
     },
     {
