@@ -122,8 +122,8 @@ export default function TechnologiesPage() {
                         <h2 className="text-2xl font-bold text-text-primary">Complete Technology Stack</h2>
                     </div>
                     
-                    <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3">
-                        {stackWithNames.slice(0, 50).map((tech, index) => (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+                        {stackWithNames.slice(0, 25).map((tech, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.5 }}
@@ -139,14 +139,12 @@ export default function TechnologiesPage() {
 
                     <div className="mt-8 text-center">
                         <p className="text-text-secondary">
-                            <span className="font-semibold text-java-blue">{Math.min(stackWithNames.length, 50)}</span> technologies displayed with 
+                            <span className="font-semibold text-java-blue">{Math.min(stackWithNames.length, 25)}</span> core technologies displayed with 
                             <span className="font-semibold text-java-red"> Java ecosystem expertise</span> at the core
                         </p>
-                        {stackWithNames.length > 50 && (
-                            <p className="text-xs text-text-secondary mt-2">
-                                Showing top 50 technologies (limited to 5 rows maximum)
-                            </p>
-                        )}
+                        <p className="text-xs text-text-secondary mt-2">
+                            Showing top 25 technologies (5 columns × 5 rows maximum)
+                        </p>
                     </div>
                 </motion.div>
             </div>
